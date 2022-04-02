@@ -1,0 +1,51 @@
+4/2/2022   C:\Users\karem\Documents\Business\Students-PostDocs\Fazekas, Katalin\ex_lockserv_automaton\ex_lockserv_automaton_Config4.txt
+INVERT/MINIMIZE TRUTH-TABLE 
+
+(1)  * 8168 unspecified truth table rows
+
+    not Config4 = not U1 and not U2 and not U3 or U1 and U2 or U1 and U3 or U2 and U3 or not D or G1 or G2 or G3 or H1 or H2 or H3;
+
+.i 13
+.o 1
+.ilb G1 G2 G3 D H1 H2 H3 L1 L2 L3 U1 U2 U3
+.ob not_Config4
+.p 11
+----------000 1
+----------11- 1
+----------1-1 1
+-----------11 1
+---0--------- 1
+1------------ 1
+-1----------- 1
+--1---------- 1
+----1-------- 1
+-----1------- 1
+------1------ 1
+.e
+
+
+ (1) Boolean equation processed
+ Processing time = 0.81 seconds
+
+
+-----------------------------------------------------------------------------------------------------------
+Quantifier Inference:
+
+   Config4 =
+	U1 | U2 | U3
+	~U1 | ~U2
+	~U1 | ~U3
+	~U2 | ~U3
+	D
+	~G1
+	~G2
+	~G3
+	~H1
+	~H2
+	~H3
+	
+   Config4 =	held()
+			\exists N. unlock_msg(N)
+			\forall N1, N2. ~(N1 == N2) --> (~unlock_msg(N) | ~unlock_msg(N2)) = \forall N1, N2. unlock_msg(N1) & unlock_msg(N2) --> (N1 == N2)
+			\forall N. ~grant_msg(N)
+			\forall N. ~hold_lock(N)
