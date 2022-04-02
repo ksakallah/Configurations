@@ -1,0 +1,58 @@
+4/2/2022   C:\Users\karem\Documents\Business\Students-PostDocs\Fazekas, Katalin\ClientServer\client_server_Config3.txt
+INVERT/MINIMIZE TRUTH-TABLE 
+
+(1)  * 4069 unspecified truth table rows
+
+    not Config3 = not L13 and not L23 and not L33 or not L12 and not L22 and not L32 or not L11 and not L21 and not L31 or L11 and L21 or L12 and L22 or L13 and L23 or L11 and L31 or L21 and L31 or L12 and L32 or L22 and L32 or L13 and L33 or L23 and L33 or S1 or S2 or S3;
+
+.i 12
+.o 1
+.ilb L11 L12 L13 L21 L22 L23 L31 L32 L33 S1 S2 S3
+.ob not_Config3
+.p 15
+--0--0--0--- 1
+-0--0--0---- 1
+0--0--0----- 1
+1--1-------- 1
+-1--1------- 1
+--1--1------ 1
+1-----1----- 1
+---1--1----- 1
+-1-----1---- 1
+----1--1---- 1
+--1-----1--- 1
+-----1--1--- 1
+---------1-- 1
+----------1- 1
+-----------1 1
+.e
+
+
+ (1) Boolean equation processed
+ Processing time = 0.73 seconds
+-----------------------------------------------------------------------------------------------------------
+Quantifier Inference:
+
+    Config3 =
+	L13 and L23 and L33
+	L12 and L22 and L32
+	L11 and L21 and L31
+	
+	~L11  ~L21
+	~L12  ~L22
+	~L13  ~L23
+	~L11  ~L31
+	~L21  ~L31
+	~L12  ~L32
+	~L22  ~L32
+	~L13  ~L33
+	~L23  ~L33
+	
+	~S1
+	~S2
+	~S3
+	
+    Config3 =
+ lines 37-39		\forall S, \exists C. link(C, S)
+ lines 41-49		\forall S, \forall C1, C2. link(C1, S) & link(C2, S) --> (C1 == C2)
+ lines 51-53		\forall S. ~semaphore(S)
