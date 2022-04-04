@@ -73,7 +73,7 @@ Quantifier Inference:
    Config2 =
 line 45		\exists S. ~semaphore(S)
 line 47		\exists S. semaphore(S)
-line 48-51		\forall S. ~semaphore(S) --> \exists C. link(C, S)
+line 49-51		\forall S. ~semaphore(S) --> \exists C. link(C, S)
 lines 53-61		\forall S, \forall C. semaphore(S) --> ~link(C, S)
 lines 63-71		\forall S, \forall C1, C2. link(C1, S) & link(C2, S) --> (C1 == C2)
 
