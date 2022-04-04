@@ -1,0 +1,79 @@
+4/2/2022   C:\Users\karem\Documents\Business\Students-PostDocs\Fazekas, Katalin\ClientServer\client_server_Config2.txt
+INVERT/MINIMIZE TRUTH-TABLE 
+
+(1)  * 4060 unspecified truth table rows
+
+    not Config2 = S1 and S2 and S3 or not S1 and not S2 and not S3 or not L13 and not L23 and not L33 and not S3 or not L12 and not L22 and not L32 and not S2 or not L11 and not L21 and not L31 and not S1 or L11 and S1 or L12 and S2 or L21 and S1 or L22 and S2 or L13 and L23 or L31 and S1 or L32 and S2 or L13 and L33 or L23 and L33 or L13 and S3 or L12 and L22 or L23 and S3 or L12 and L32 or L22 and L32 or L33 and S3 or L11 and L21 or L11 and L31 or L21 and L31;
+
+.i 12
+.o 1
+.ilb L11 L12 L13 L21 L22 L23 L31 L32 L33 S1 S2 S3
+.ob not_Config2
+.p 23
+---------111 1
+---------000 1
+--0--0--0--0 1
+-0--0--0--0- 1
+0--0--0--0-- 1
+1--------1-- 1
+-1--------1- 1
+---1-----1-- 1
+----1-----1- 1
+--1--1------ 1
+------1--1-- 1
+-------1--1- 1
+--1-----1--- 1
+-----1--1--- 1
+--1--------1 1
+-1--1------- 1
+-----1-----1 1
+-1-----1---- 1
+----1--1---- 1
+--------1--1 1
+1--1-------- 1
+1-----1----- 1
+---1--1----- 1
+.e
+
+
+ (1) Boolean equation processed
+ Processing time = 0.73 seconds
+-----------------------------------------------------------------------------------------------------------
+Quantifier Inference:
+
+    Config2 =
+	~S1 | ~S2 | ~S3
+	
+	S1 | S2 | S3
+	
+	L13 | L23 | L33 | S3
+	L12 | L22 | L32 | S2
+	L11 | L21 | L31 | S1
+	
+	~L11 | ~S1
+	~L21 | ~S1
+	~L31 | ~S1
+	~L12 | ~S2
+	~L22 | ~S2
+	~L32 | ~S2
+	~L13 | ~S3
+	~L23 | ~S3
+	~L33 | ~S3
+
+	~L11 | ~L21
+	~L11 | ~L31
+	~L21 | ~L31
+	~L12 | ~L22
+	~L12 | ~L32
+	~L22 | ~L32
+	~L13 | ~L23
+	~L13 | ~L33
+	~L23 | ~L33
+
+   Config2 =
+line 45		\exists S. ~semaphore(S)
+line 47		\exists S. semaphore(S)
+line 48-51		\forall S. ~semaphore(S) --> \exists C. link(C, S)
+lines 53-61		\forall S, \forall C. semaphore(S) --> ~link(C, S)
+lines 63-71		\forall S, \forall C1, C2. link(C1, S) & link(C2, S) --> (C1 == C2)
+
