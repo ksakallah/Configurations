@@ -1,0 +1,84 @@
+4/7/2022   C:\Users\karem\Documents\Business\Students-PostDocs\Fazekas, Katalin\TCommit\Configurations\RM4\tcommit4_Config4.txt
+INVERT/MINIMIZE TRUTH-TABLE 
+
+(1)  * 65500 unspecified truth table rows
+
+    not Config4 = not W1 and not W2 and not W3 and not W4 or not P1 and not P2 and not P3 and not P4 or not A1 and not A2 and not A3 and not A4 or not A4 and not P4 and not W4 or not A3 and not P3 and not W3 or not A2 and not P2 and not W2 or not A1 and not P1 and not W1 or A1 and W1 or P1 and W1 or A2 and P2 or A3 and P3 or A4 and P4 or A1 and P1 or P2 and W2 or A2 and W2 or A3 and W3 or P3 and W3 or A4 and W4 or P4 and W4 or C1 or C2 or C3 or C4;
+
+.i 16
+.o 1
+.ilb A1 A2 A3 A4 C1 C2 C3 C4 P1 P2 P3 P4 W1 W2 W3 W4
+.ob not_Config4
+.p 23
+------------0000 1
+--------0000---- 1
+0000------------ 1
+---0-------0---0 1
+--0-------0---0- 1
+-0-------0---0-- 1
+0-------0---0--- 1
+1-----------1--- 1
+--------1---1--- 1
+-1-------1------ 1
+--1-------1----- 1
+---1-------1---- 1
+1-------1------- 1
+---------1---1-- 1
+-1-----------1-- 1
+--1-----------1- 1
+----------1---1- 1
+---1-----------1 1
+-----------1---1 1
+----1----------- 1
+-----1---------- 1
+------1--------- 1
+-------1-------- 1
+.e
+
+
+ (1) Boolean equation processed
+ Processing time = 26.42 seconds
+ -----------------------------------------------------------------------------------------------------------
+Quantifier Inference:
+
+Config4 =
+	W1 | W2 | W3 | W4
+
+	 P1 | P2 | P3 | P4
+	 
+	 A1 | A2 | A3 | A4
+	 
+	 A4 | P4 | W4
+	 A3 | P3 | W3
+	 A2 | P2 | W2
+	 A1 | P1 | W1
+	 
+	 ~A1 | ~W1
+	 ~A2 | ~W2
+	 ~A3 | ~W3
+	 ~A4 | ~W4
+	 
+	 ~P1 | ~W1
+	 ~P2 | ~W2
+	 ~P3 | ~W3
+	 ~P4 | ~W4
+	 
+	 ~A1 | ~P1
+	 ~A2 | ~P2
+	 ~A3 | ~P3
+	 ~A4 | ~P4
+
+	 ~C1
+	 ~C2
+	 ~C3
+	 ~C4
+
+Config 4 =
+Line 45		\exists R. working(R)						// at least one working R
+Line 47		\exists R. pending(R)						// at least one pending R
+Line 49		\exists R. aborted(R)						// at least one aborted R
+Line 51-54		\forall R. aborted(R | pending(R) | working(R)		// each R must be in one of these 3 states
+Line 56-59		\forall R. ~aborted(R) | ~working(R)			// but only in exactly one of them (mutual exclusion, one-hot)
+Line 61-64		\forall R. ~pending(R) | ~working(R)			//
+Line 66-69		\forall R. ~aborted(R) | ~pending(R)			//
+Line 71-74		\forall R. ~committed(R)					// no R is committed

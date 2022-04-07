@@ -1,0 +1,62 @@
+4/7/2022   C:\Users\karem\Documents\Business\Students-PostDocs\Fazekas, Katalin\TCommit\Configurations\RM4\tcommit4_Config9.txt
+INVERT/MINIMIZE TRUTH-TABLE 
+
+(1)  * 65535 unspecified truth table rows
+
+    not Config9 = not C4 or not C3 or not C2 or not C1 or A1 or A2 or A3 or A4 or P1 or P2 or P3 or P4 or W1 or W2 or W3 or W4;
+
+.i 16
+.o 1
+.ilb A1 A2 A3 A4 C1 C2 C3 C4 P1 P2 P3 P4 W1 W2 W3 W4
+.ob not_Config9
+.p 16
+-------0-------- 1
+------0--------- 1
+-----0---------- 1
+----0----------- 1
+1--------------- 1
+-1-------------- 1
+--1------------- 1
+---1------------ 1
+--------1------- 1
+---------1------ 1
+----------1----- 1
+-----------1---- 1
+------------1--- 1
+-------------1-- 1
+--------------1- 1
+---------------1 1
+.e
+
+
+ (1) Boolean equation processed
+ Processing time = 0.49 seconds
+ -----------------------------------------------------------------------------------------------------------
+Quantifier Inference:
+
+Config9 =
+	C1
+	C2
+	C3
+	C4
+	
+	~A1
+	~A2
+	~A3
+	~A4
+	
+	~P1
+	~P2
+	~P3
+	~P4
+	
+	~W1
+	~W2
+	~W3
+	~W4
+	
+Config 9 =
+line 38-41		\forall R. committed(R)
+line 43-46		\forall R. ~aborted(R)
+line 48-51		\forall R. ~pending(R)
+line 53-56		\forall R. ~working(R)

@@ -1,0 +1,68 @@
+4/7/2022   C:\Users\karem\Documents\Business\Students-PostDocs\Fazekas, Katalin\TCommit\Configurations\RM4\tcommit4_Config2.txt
+INVERT/MINIMIZE TRUTH-TABLE 
+
+(1)  * 65522 unspecified truth table rows
+
+    not Config2 = not W1 and not W2 and not W3 and not W4 or W1 and W2 and W3 and W4 or not A4 and not W4 or not A3 and not W3 or not A2 and not W2 or A1 and W1 or not A1 and not W1 or A2 and W2 or A3 and W3 or A4 and W4 or C1 or C2 or C3 or C4 or P1 or P2 or P3 or P4;
+
+.i 16
+.o 1
+.ilb A1 A2 A3 A4 C1 C2 C3 C4 P1 P2 P3 P4 W1 W2 W3 W4
+.ob not_Config2
+.p 18
+------------0000 1
+------------1111 1
+---0-----------0 1
+--0-----------0- 1
+-0-----------0-- 1
+1-----------1--- 1
+0-----------0--- 1
+-1-----------1-- 1
+--1-----------1- 1
+---1-----------1 1
+----1----------- 1
+-----1---------- 1
+------1--------- 1
+-------1-------- 1
+--------1------- 1
+---------1------ 1
+----------1----- 1
+-----------1---- 1
+.e
+
+
+ (1) Boolean equation processed
+ Processing time = 19.62 seconds
+ -----------------------------------------------------------------------------------------------------------
+Quantifier Inference:
+
+Config2 =
+	W1 | W2 | W3 | W4
+	
+	~W1 | ~W2 | ~W3 | ~W4
+	
+	A1 | W1
+	~A1 | ~W1
+	A2 | W2
+	~A2 | ~W2
+	A3 | W3
+	~A3 | ~W3
+	A4 | W4
+	~A4 | ~W4
+	
+	~C1
+	~C2
+	~C3
+	~C4
+	
+	~P1
+	~P2
+	~P3
+	~P4
+	
+Config2 =
+line 40		\exists R. working(R)		// at least one working R
+line 42		\exists R. ~working(R)		// at least one non-working R
+line 44-51		\forall R. (aborted(R) | working(R)) & (~aborted(R) | ~working(R))	// each R is either aborted or working
+line 53-56		\forall R. ~comitted(R)		// no R is committed
+line 55-61		\forall R. ~pending(R)		// no R is pending
