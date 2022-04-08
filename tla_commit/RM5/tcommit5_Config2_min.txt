@@ -1,0 +1,39 @@
+4/8/2022   C:\Users\karem\Documents\Business\Students-PostDocs\Fazekas, Katalin\TCommit\Configurations\RM5\tcommit5_Config2.txt
+INVERT/MINIMIZE TRUTH-TABLE 
+
+(1)  * 1048546 unspecified truth table rows
+
+    not Config2 = not W1 and not W2 and not W3 and not W4 and not W5 or W1 and W2 and W3 and W4 and W5 or not A5 and not W5 or not A4 and not W4 or not A3 and not W3 or not A2 and not W2 or A1 and W1 or not A1 and not W1 or A2 and W2 or A3 and W3 or A4 and W4 or A5 and W5 or C1 or C2 or C3 or C4 or C5 or P1 or P2 or P3 or P4 or P5;
+
+.i 20
+.o 1
+.ilb A1 A2 A3 A4 A5 C1 C2 C3 C4 C5 P1 P2 P3 P4 P5 W1 W2 W3 W4 W5
+.ob not_Config2
+.p 22
+---------------00000 1
+---------------11111 1
+----0--------------0 1
+---0--------------0- 1
+--0--------------0-- 1
+-0--------------0--- 1
+1--------------1---- 1
+0--------------0---- 1
+-1--------------1--- 1
+--1--------------1-- 1
+---1--------------1- 1
+----1--------------1 1
+-----1-------------- 1
+------1------------- 1
+-------1------------ 1
+--------1----------- 1
+---------1---------- 1
+----------1--------- 1
+-----------1-------- 1
+------------1------- 1
+-------------1------ 1
+--------------1----- 1
+.e
+
+
+ (1) Boolean equation processed
+ Processing time = 11,376.77 seconds
