@@ -1,0 +1,47 @@
+4/6/2022   C:\Users\karem\Documents\Business\Students-PostDocs\Fazekas, Katalin\TCommit\Configurations\RM3\tcommit3_Config1.txt
+INVERT/MINIMIZE TRUTH-TABLE 
+
+(1)  * 4095 unspecified truth table rows
+
+    not Config1 = not W3 or not W2 or not W1 or A1 or A2 or A3 or C1 or C2 or C3 or P1 or P2 or P3;
+
+.i 12
+.o 1
+.ilb A1 A2 A3 C1 C2 C3 P1 P2 P3 W1 W2 W3
+.ob not_Config1
+.p 12
+-----------0 1
+----------0- 1
+---------0-- 1
+1----------- 1
+-1---------- 1
+--1--------- 1
+---1-------- 1
+----1------- 1
+-----1------ 1
+------1----- 1
+-------1---- 1
+--------1--- 1
+.e
+
+
+ (1) Boolean equation processed
+ Processing time = 0.21 seconds
+ -----------------------------------------------------------------------------------------------------------
+Quantifier Inference:
+
+Config1 =
+	W1
+	W2
+	W3
+	~A1
+	~A2
+	~A3
+	~C1
+	~C2
+	~C3
+	~P1
+	~P2
+	~P3
+	
+Config1 = \forall R. ~aborted(R) & ~committed(R) & ~pending(R) & working(R)

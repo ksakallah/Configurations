@@ -1,0 +1,57 @@
+4/6/2022   C:\Users\karem\Documents\Business\Students-PostDocs\Fazekas, Katalin\TCommit\Configurations\RM3\tcommit3_Config3.txt
+INVERT/MINIMIZE TRUTH-TABLE 
+
+(1)  * 4090 unspecified truth table rows
+
+    not Config3 = not W1 and not W2 and not W3 or W1 and W2 and W3 or not P3 and not W3 or not P2 and not W2 or P1 and W1 or not P1 and not W1 or P2 and W2 or P3 and W3 or A1 or A2 or A3 or C1 or C2 or C3;
+
+.i 12
+.o 1
+.ilb A1 A2 A3 C1 C2 C3 P1 P2 P3 W1 W2 W3
+.ob not_Config3
+.p 14
+---------000 1
+---------111 1
+--------0--0 1
+-------0--0- 1
+------1--1-- 1
+------0--0-- 1
+-------1--1- 1
+--------1--1 1
+1----------- 1
+-1---------- 1
+--1--------- 1
+---1-------- 1
+----1------- 1
+-----1------ 1
+.e
+
+
+ (1) Boolean equation processed
+ Processing time = 0.80 seconds
+ -----------------------------------------------------------------------------------------------------------
+Quantifier Inference:
+
+Config3 =
+	W1 | W2 | W3
+	~W1 | ~W2 | ~W3
+
+	P1 | W1
+	~P1 | ~W1
+	P2 | W2
+	~P2 | ~W2
+	P3 | W3
+	~P3 | ~W3
+	
+	~A1
+	~A2
+	~A3
+	~C1
+	~C2
+	~C3
+	
+Config3 =
+line 36		\exists R. working(R)
+line 37		\exists R, ~working(R)
+line 39-44		\forall R. (pending(R) | working(R)) & (~pending(R) | ~working(R)) = \forall R. pending(R) xor working(R)
+line 46-51		\forall R. ~aborted(R) & ~committed(R)
